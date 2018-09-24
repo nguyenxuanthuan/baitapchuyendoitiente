@@ -1,0 +1,37 @@
+<form>
+      <strong><label for = "amount">Amount</label></strong>
+      <input type ="text" id="amount" value="">
+      <strong>From Currency</strong>
+      <select id="from_currency">
+              <option>--Please choose an option--</option>
+              <option value="vnd">VND</option>
+      </select>
+      <strong>To Currency</strong>
+      <Select id="to_currency">
+              <option value="usd">USD</option>
+              <option value="jpy">JPY</option>
+      </Select>
+      <input type="button" value="Calculate" onclick="calculate()">
+      <input type="text" id="total" value="">
+</form>
+<script>
+
+
+              function calculate() {
+                var amount = parseFloat(document.getElementById("amount").value);
+                var from_currency = document.getElementById("from_currency");
+                var to_currency = document.getElementById("to_currency");
+                var total = document.getElementById("total");
+                if (from_currency.value === "vnd" && to_currency.value === "usd") {
+
+
+                  total.value = (amount / 23200);
+                } else if ((from_currency.value === "vnd") && (to_currency.value === "jpy"))
+
+                {
+
+
+                  total.value = (amount * 0.0048390727);
+                }
+              }
+</script>
